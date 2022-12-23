@@ -8,9 +8,9 @@ import music_theory
 data_dir = "../chords/"
 
 # Whether to save figures to disk
-save_figs = False
+save_figs = True
 fig_dir = "../examples/"
-
+img_format = "png"
 
 # Colors for plotting waveform and spectrum
 color_waveform = "#16697a"
@@ -74,7 +74,7 @@ def plot_chord_spectrum(f, X, fs, chord_name, filename, f_max=1000):
     X = X[:n_max]
     f = f[:n_max]
 
-    fig, ax = plt.subplots(1, 1)
+    fig, ax = plt.subplots(1, 1, figsize=(7, 4))
 
     # Plot spectrum
     remove_spines(ax)
@@ -88,7 +88,7 @@ def plot_chord_spectrum(f, X, fs, chord_name, filename, f_max=1000):
     plt.tight_layout()
 
     if save_figs:
-        plt.savefig(fig_dir + "{}-spectrum-with-{}-notes.pdf".format(filename.replace(".wav", ""), chord_name))
+        plt.savefig(fig_dir + "{}-spectrum-with-{}-notes.{}".format(filename.replace(".wav", ""), chord_name, img_format, dpi=200))
     plt.show()
 
 
@@ -129,7 +129,7 @@ def plot_waveform_and_spectrum(wav_file):
     plt.tight_layout()
 
     if save_figs:
-        plt.savefig("overview" + ".pdf")
+        plt.savefig("overview" + "." + img_format)
     plt.show()
 
 
@@ -156,7 +156,7 @@ def add_notes_to_chord_axis(ax, chord_name, max_spectral_amplitude):
         ax.annotate(notes[i], (f, text_height), ha="center", va="bottom")
 
 if __name__ == "__main__":
-    chord_name = "A"
+    chord_name = "G"
     f_max = 550
     filename = "2.wav"
     plot_chord_spectrum(*get_chord_spectrum(data_dir + filename), chord_name, filename, f_max=f_max)
