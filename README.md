@@ -16,6 +16,8 @@ cd chord-identification/src
 python3 chord-identification.py
 ```
 
+![2-spectrum-with-A-notes](https://user-images.githubusercontent.com/50270681/209318548-dc8da836-a29b-4c06-b1af-645b7207a09b.png)
+
 ## Goal
 
 The `chords` directory contains 5 short recordings of 5 different strummed guitar chords: A, C, D, E, and G major.
