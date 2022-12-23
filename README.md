@@ -16,7 +16,7 @@ cd chord-identification/src
 python3 chord-identification.py
 ```
 
-![2-spectrum-with-A-notes](https://user-images.githubusercontent.com/50270681/209318548-dc8da836-a29b-4c06-b1af-645b7207a09b.png)
+![2-spectrum-with-G-notes](https://user-images.githubusercontent.com/50270681/209319234-a9663741-a560-47ca-97b5-ef9e89c97306.png)
 
 ## Goal
 
